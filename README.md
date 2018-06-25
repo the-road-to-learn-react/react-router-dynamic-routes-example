@@ -1,5 +1,7 @@
 # React Router v4 Example
 
+[![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/)
+
 * Found in [The Road to learn React](https://roadtoreact.com/)
 
 ![react-router-example](https://user-images.githubusercontent.com/2479967/31482949-a9e6465a-af54-11e7-9c37-10a6746b9500.gif)
