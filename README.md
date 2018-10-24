@@ -4,7 +4,7 @@
 
 ## Installation
 
-* `git clone git@github.com:rwieruch/react-router-dynamic-routes-example.git`
+* `git clone git@github.com:the-road-to-learn-react/react-router-dynamic-routes-example.git`
 * `cd react-router-dynamic-routes-example`
 * `npm install`
 * `npm start`
