@@ -1,9 +1,10 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link,
+  useParams,
 } from 'react-router-dom';
 
 const COURSES = {
@@ -47,11 +48,11 @@ const Navigation = () => (
 );
 
 const Content = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/courses" component={Course} />
-    <Route path="/about" component={About} />
-  </Switch>
+  <Routes>
+    <Route exact path="/" element={<Home />} />
+    <Route path="/courses/*" element={<Course />} />
+    <Route path="/about" element={<About />} />
+  </Routes>
 );
 
 const Home = () => <h1>My Home Page</h1>;
@@ -65,10 +66,10 @@ const Course = () => (
       Pages)
     </h1>
 
-    <Switch>
-      <Route exact path="/courses" component={CourseList} />
-      <Route path="/courses/:id" component={CourseItem} />
-    </Switch>
+    <Routes>
+      <Route exact path="/" element={<CourseList />} />
+      <Route path="/:id" element={<CourseItem />} />
+    </Routes>
   </>
 );
 
@@ -78,7 +79,7 @@ const CourseList = () => (
     <ul>
       {Object.keys(COURSES).map(key => (
         <li key={key}>
-          Go to individual course route:{' '}
+          Go to individual course route:&nbsp;
           <Link to={`/courses/${key}`}>{COURSES[key].title}</Link>
         </li>
       ))}
@@ -86,16 +87,20 @@ const CourseList = () => (
   </>
 );
 
-const CourseItem = props => (
-  <>
-    <h2>{COURSES[props.match.params.id].title}</h2>
-    <p>
-      Go to <a href={COURSES[props.match.params.id].url}>Course</a>
-    </p>
-    <p>
-      Back to <Link to="/courses">Courses</Link>
-    </p>
-  </>
-);
+const CourseItem = () => {
+  const { id } = useParams();
+
+  return (
+    <>
+      <h2>{COURSES[id].title}</h2>
+      <p>
+        Go to <a href={COURSES[id].url}>Course</a>
+      </p>
+      <p>
+        Back to <Link to="/courses">Courses</Link>
+      </p>
+    </>
+  );
+};
 
 export default App;
