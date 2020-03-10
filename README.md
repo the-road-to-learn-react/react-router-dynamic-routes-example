@@ -1,4 +1,4 @@
-# React Router v4 with dynamic Routes Example
+# React Router v6 with dynamic Routes Example
 
 [![Build Status](https://travis-ci.org/the-road-to-learn-react/react-router-dynamic-routes-example.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/react-router-dynamic-routes-example) [![Greenkeeper badge](https://badges.greenkeeper.io/the-road-to-learn-react/react-router-dynamic-routes-example.svg)](https://greenkeeper.io/)
 
